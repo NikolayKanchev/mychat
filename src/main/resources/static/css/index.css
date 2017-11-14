@@ -1,0 +1,62 @@
+body
+{
+    background-image: url("../images/background-keybord.jpg");
+    background-size: cover;
+}
+
+.login
+{
+    width: 400px;
+    height: 360px;
+    background-color: rgba(0,0,0,0.1);
+    margin-top: 10%;
+    margin-left: 35%;
+    padding-top: 10px;
+    padding-left: 50px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    color: white;
+    font-weight: bolder;
+    box-shadow: inset -4px -4px rgba(0,0,0,0.5);
+    font-size: 18px;
+
+    position: absolute;
+    /*top: calc(50% - 75px);*/
+    /*left: calc(50% - 50px);*/
+    /*height: 150px;*/
+    /*width: 350px;*/
+}
+
+.login input[type="text"]
+{
+    padding-left: 5%;
+    width: 60%;
+    height:35px;
+    border: 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.login input[type="password"]
+{
+    padding-left: 5%;
+    width: 60%;
+    height:35px;
+    border: 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.login input[type="submit"]
+{
+    width: 100px;
+    height:35px;
+    border: 0;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-color: skyblue;
+}

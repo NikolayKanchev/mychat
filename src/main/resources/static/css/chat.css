@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("../images/background-keybord.jpg");
+    background-size: cover;
+    position: fixed;
+}
+
+.chatBox{
+    width: 1240px;
+    min-width: 390px;
+    height: 670px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 25px;
+    margin: 30px 10%;
+}
+
+.chatRoom{
+    width: 67%;
+}
+
+.chatLogs, .usersWindow{
+    padding: 10px;
+    height: 550px;
+    background: rgba(255,255,255,0.6);
+    border: 2px solid #eee;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-left: 20px;
+}
+
+.chatLogs::-webkit-scrollbar, .usersWindow::-webkit-scrollbar{
+    width: 10px;
+}
+
+.chatLogs::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgba(0,0,0,.2);
+}
+
+.users{
+    width: 33%;
+}
+
+.row, .chatBox{
+    display: flex;
+}
+
+.usersWindow::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgba(0,0,0,.2);
+}
+
+.chat{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.userName{
+    width: 13%;
+    padding: 3%;
+    height: 12%;
+    color: white;
+    background: black;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.chatMessage{
+    width: 82%;
+    padding: 15px;
+    margin: 5px 10px 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.chatMessage.self{
+    text-align: right;
+    background: rgba(0,120,0,0.3);
+    order: -1;
+}
+
+.chatMessage.friend{
+    background: rgba(0,0,120,0.3);
+}
+
+.chatForm{
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.chatForm textarea{
+    background: rgba(255,255,255,0.6);
+    width: 100%;
+    height: 50px;
+    border: 2px solid #eee;
+    border-radius: 3px;
+    resize: none;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.chatForm textarea:focus{
+    background: rgba(255,255,255,0.1);
+}
+
+.chatForm textarea::-webkit-scrollbar{
+    width: 10px;
+}
+
+.chatForm textarea::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: rgba(255,255,255,.2);
+}
+
+
+.chatForm button, .quitBtn{
+    background: rgba(150,150,255,.2);
+    padding: 5px 15px;
+    font-size: 33px;
+    color: #fff;
+    border: none;
+    margin: 0 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.chatForm button:hover, .check button:hover{
+    background: rgba(0,255,255,.2);
+}
+
+.online{
+    width: 2%;
+    padding: 5px;
+    height: 10px;
+    color: white;
+    background: green;
+    border-radius: 50%;
+    margin: 5px;
+    align-self: center;
+}
+
+.notOnline {
+    width: 2%;
+    padding: 5px;
+    height: 10px;
+    color: white;
+    background: transparent;
+    border-radius: 50%;
+    margin: 5px;
+    align-self: center;
+}
+
+.user{
+    width: 85%;
+    height: auto;
+    padding: 5px;
+    margin: 5px 6px 0;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    background: rgba(150,150,150,0.5);
+    align-self: center;
+
+}
+
+.check{
+    color: #ffffff;
+    margin-top: 20px;
+    margin-left: 3%;
+    font-size: 20px;
+    display: flex;
+}
+
+.checkbox{
+    margin-left: 10px;
+    height: 20px;
+    width: 20px;
+    align-self: center;
+}
+
+.checkLabel{
+    margin-left: 40%;
+    align-self: center;
+}
+
+
+
