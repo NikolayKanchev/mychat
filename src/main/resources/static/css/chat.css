@@ -65,7 +65,7 @@ body {
 
 .userName{
     width: 13%;
-    padding: 3%;
+    padding: 1%;
     height: 12%;
     color: white;
     background: black;
@@ -75,7 +75,7 @@ body {
 
 .chatMessage{
     width: 82%;
-    padding: 15px;
+    padding: 3px;
     margin: 5px 10px 0;
     border-radius: 10px;
     color: #fff;
@@ -192,6 +192,15 @@ body {
 .checkLabel{
     margin-left: 40%;
     align-self: center;
+}
+
+.dateAndTimeFriend, .dateAndTimeSelf{
+    font-size: 10px;
+}
+
+.dateAndTimeSelf{
+    width: 97%;
+    text-align: right;
 }
 
 

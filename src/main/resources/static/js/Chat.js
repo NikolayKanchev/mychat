@@ -29,6 +29,8 @@
     {
         updateListUsers(stompClient,"/app/listUsers", userName, "listUsers");
 
+        sendMessage(stompClient, "/app/listMessages", userName, "listMessages")
+
         stompClient.subscribe("/topic/listUsers", function (listUsers)
         {
             var users = JSON.parse(listUsers.body);
@@ -58,25 +60,63 @@
 
         });
 
+        stompClient.subscribe("/topic/listMessages", function (listMessages)
+        {
+            var messages = JSON.parse(listMessages.body);
+
+            chatLogs.innerHTML = "";
+
+            console.log(messages);
+
+            for(var i = 0; i< messages.length; i++)
+            {
+                if (messages[i]["userName"] === userName)
+                {
+                    chatLogs.innerHTML +=
+                        "<div class=\"chat self\">\n" +
+                        "<div class=\"userName self\">" + messages[i]["userName"] + "</div>\n" +
+                        "<p class=\"chatMessage self\">" + messages[i]["text"] + "</p>\n" +
+                        "<p class='dateAndTimeSelf'>" + messages[i]["date"] + " / " +messages[i]["time"]+ "</p>\n" +
+                        "</div>";
+
+                } else
+                {
+                    chatLogs.innerHTML +=
+                        "<div class=\"chat friend\">\n" +
+                        "<div class=\"userName friend\">" + messages[i]["userName"] + "</div>\n" +
+                        "<p class=\"chatMessage friend\">" + messages[i]["text"] + "</p>\n" +
+                        "<p class='dateAndTimeFriend'>" + messages[i]["date"] + " / " +messages[i]["time"]+ "</p>\n" +
+                        "</div>";
+                }
+
+                chatLogs.scrollTop = chatLogs.scrollHeight;
+            }
+        });
+
         stompClient.subscribe("/topic/chat", function (message)
         {
             var gson = JSON.parse(message.body);
 
-            if(gson.userName !== userName)
+            if(gson["userName"] !== userName)
             {
                 chatLogs.innerHTML +=
                     "<div class=\"chat friend\">\n" +
-                    "<div class=\"userName friend\">" + gson.userName + "</div>\n" +
-                    "<p class=\"chatMessage friend\">" + gson.message + "</p>\n" +
+                    "<div class=\"userName friend\">" + gson["userName"] + "</div>\n" +
+                    "<p class=\"chatMessage friend\">" + gson["text"] + "</p>\n" +
+                    "<p class='dateAndTimeFriend'>" + gson["date"] + " / " +gson["time"]+ "</p>\n" +
                     "</div>";
             }else
             {
                 chatLogs.innerHTML +=
                     "<div class=\"chat self\">\n" +
-                    "<div class=\"userName self\">"+ gson.userName +"</div>\n" +
-                    "<p class=\"chatMessage self\">"+ gson.message +"</p>\n" +
+                    "<div class=\"userName self\">"+ gson["userName"] +"</div>\n" +
+                    "<p class=\"chatMessage self\">"+ gson["text"] +"</p>\n"+
+                    "<p class='dateAndTimeSelf'>" + gson["date"] + " / " +gson["time"]+ "</p>\n" +
                     "</div>";
             }
+
+            chatLogs.scrollTop = chatLogs.scrollHeight;
+
         });
     }, function (error)
     {

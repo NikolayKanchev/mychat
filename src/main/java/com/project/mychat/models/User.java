@@ -1,7 +1,5 @@
 package com.project.mychat.models;
 
-import org.springframework.beans.factory.annotation.Value;
-
 import javax.persistence.*;
 
 @Entity
