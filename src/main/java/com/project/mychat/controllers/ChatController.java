@@ -71,7 +71,7 @@ public class ChatController
         newMessage.setUserName(userName);
         newMessage.setText(text);
         newMessage.setDate(Date.valueOf(LocalDate.now()));
-        newMessage.setTime(java.sql.Time.valueOf(LocalTime.now()));
+        newMessage.setTime(java.sql.Time.valueOf(LocalTime.now().plusHours(1)));
 
         messageDao.save(newMessage);
 

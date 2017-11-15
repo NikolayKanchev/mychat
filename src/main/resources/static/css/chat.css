@@ -75,11 +75,16 @@ body {
 
 .chatMessage{
     width: 82%;
-    padding: 3px;
+    padding: auto;
     margin: 5px 10px 0;
     border-radius: 10px;
     color: #fff;
     font-size: 20px;
+    -moz-hyphens:auto;
+    -ms-hyphens:auto;
+    -webkit-hyphens:auto;
+    hyphens:auto;
+    word-wrap:break-word;
 }
 
 .chatMessage.self{
@@ -202,6 +207,3 @@ body {
     width: 97%;
     text-align: right;
 }
-
-
-

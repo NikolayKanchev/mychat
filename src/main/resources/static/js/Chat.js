@@ -127,6 +127,8 @@
     {
         var messageText = document.getElementById('message').value;
 
+        document.getElementById('message').value = "";
+
         sendMessage(stompClient,"/app/chat", userName, messageText);
 
     };
